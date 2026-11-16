@@ -1,0 +1,128 @@
+/* Custom Styles extending Tailwind */
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* Blob Animation */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Hand-Drawn Sketch Aesthetic Classes */
+
+.sketch-box {
+    border-radius: 2px 255px 3px 255px / 255px 5px 225px 3px;
+    border: 3px solid #111827;
+}
+
+.sketch-box-alt {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 3px solid #111827;
+}
+
+.sketch-button {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 3px solid #111827;
+    transition: all 0.2s ease;
+}
+
+.sketch-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px #111827 !important;
+}
+
+.sketch-button-small {
+    border-radius: 10px 225px 15px 255px/255px 15px 225px 15px;
+    border: 2px solid #111827;
+}
+
+.sketch-shadow-yellow {
+    box-shadow: 6px 6px 0px 0px #facc15;
+}
+.sketch-shadow-yellow:hover {
+    box-shadow: 8px 8px 0px 0px #facc15;
+    transform: translate(-2px, -2px);
+}
+
+.sketch-shadow-amber {
+    box-shadow: 6px 6px 0px 0px #f59e0b;
+}
+
+.sketch-shadow-black {
+    box-shadow: 6px 6px 0px 0px #111827;
+}
+.sketch-shadow-black:hover {
+    box-shadow: 8px 8px 0px 0px #111827;
+    transform: translate(-2px, -2px);
+}
+
+/* Extreme Scroll Fluidity Hack */
+body.disable-hover {
+    pointer-events: none !important;
+}
+
+/* Elite Performance Custom Scrollbar */
+/* Global Scale (Tailwind relies on root rem) */
+html {
+    font-size: 92%;
+    scrollbar-width: none; /* Firefox */
+}
+::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Edge */
+}
+
+#custom-scrollbar-track {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 100vh;
+    background: #f9fafb;
+    border-left: 3px solid #111827;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+#custom-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    right: -3px; /* align with track border */
+    width: 16px;
+    background: #facc15;
+    border: 3px solid #111827;
+    border-radius: 6px;
+    cursor: grab;
+    will-change: transform; /* Hardware acceleration */
+}
+
+#custom-scrollbar-thumb:active {
+    cursor: grabbing;
+    background: #eab308;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    user-drag: none;
+}

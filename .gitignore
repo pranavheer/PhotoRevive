@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+temp_uploads/*
+!temp_uploads/.gitkeep
+models/*.onnx
+npm-debug.log*
